@@ -13,7 +13,13 @@ with open(csvpath) as csvfile:
 df = pd.read_csv(csvpath)
 df.head()
 
-print(df.groupby('Date').nunique()) 
+print("Total number of months: " + str(len(df.groupby('Date').nunique())))
 
 net_total = ("Total Profits/Losses: " + "$" + str(df["Profit/Losses"].sum()))
 print(net_total)
+
+difference = (df['Profit/Losses'].diff())
+print(difference)
+
+mean = df[difference].mean()
+print("The average change in profits/losses is $" + str(mean))
