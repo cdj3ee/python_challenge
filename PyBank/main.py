@@ -21,5 +21,5 @@ print(net_total)
 difference = (df['Profit/Losses'].diff())
 print(difference)
 
-mean = df[difference].mean()
-print("The average change in profits/losses is $" + str(mean))
+average = df[difference].mean()
+print("The average change in profits/losses is $" + str(average))
