@@ -10,7 +10,10 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
 
-data_file_df = pd.read_csv(csvpath)
-data_file_df.head()
+df = pd.read_csv(csvpath)
+df.head()
 
-print (data_file_df.groupby('Date').nunique())
+print(df.groupby('Date').nunique()) 
+
+net_total = ("Total Profits/Losses: " + "$" + str(df["Profit/Losses"].sum()))
+print(net_total)
