@@ -10,4 +10,7 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
 
+data_file_df = pd.read_csv(csvpath)
+data_file_df.head()
 
+print (data_file_df.groupby('Date').nunique())
