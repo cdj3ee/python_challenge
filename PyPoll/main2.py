@@ -19,25 +19,21 @@ with open('C:\\Users\\cdj3e\\vu_bootcamp\\Python\\Module_3_Challenge\\python_cha
 ##List all unique candidates
 candidate = list(set(all_candidates))
 
-##Find total number of votes
+##Find number/percentage of votes for each candidate
 total_votes = len(ballot_id)
 
-##Calculate counts and percentages for candidates
 for candidate in all_candidates:
     count = all_candidates.count(candidate)
     percent = round((count / total_votes) * 100, 3)
     counts.append(count)
     percentages.append(percent)
 
-##Identify winner and assign variable
 winner_index = counts.index(max(counts))
 winner = candidate(winner_index)
 
-##Create for loop and float to print corresponding candidate, vote percentage, and vote count
 for i in range(len(candidate)):
     print(f"{candidate[i]}: {percentages[i]}% ({counts[i]})")
 
-##print results
 print("Election Results")
 print("------------------------")
 print("Total Votes: ", total_votes)
