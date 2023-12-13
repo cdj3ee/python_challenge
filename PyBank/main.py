@@ -15,12 +15,6 @@ with open('C:\\Users\\cdj3e\\vu_bootcamp\\Python\\Module_3_Challenge\\python_cha
         date.append(row[0])
         profits.append(float(row[1]))
 
-##Print title, border, total months, total profits
-print("Financial Analysis:")
-print("---------------------------------")
-print("Total Months:", str(len(date)))
-print("Total: $", str(round(sum(profits))))
-
 ##Create loop to get profit changes over time and then calculate average
 for i in range(1, len(profits)):
     profit_change.append(profits[i] - profits[i-1])
@@ -32,9 +26,13 @@ for i in range(1, len(profits)):
 
 ##Record minimum and maximum profit change dates
     max_date = str(date[profit_change.index(max(profit_change))])
-    min_date = str(date[profit_change.index(min(profit_change))])  
+    min_date = str(date[profit_change.index(min(profit_change))])
 
-##Print the average profit change, the max date/max change, and min date/min change
+##Print results
+print("Financial Analysis:")
+print("---------------------------------")
+print("Total Months:", str(len(date)))
+print("Total: $", str(round(sum(profits))))
 print("Average Change: $", round(average_change, 2))
 print("Greatest Increase in Profits: ", max_date, "($", round(max_change), ")")
 print("Greatest Decrease in Profits: ", min_date, "($", round(min_change), ")")
