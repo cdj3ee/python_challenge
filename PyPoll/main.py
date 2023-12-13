@@ -29,13 +29,13 @@ for candidate in all_candidates:
     counts.append(count)
     percentages.append(percent)
 
-##Identify winner and assign variable
-winner_index = counts.index(max(counts))
-winner = candidate(winner_index)
-
 ##Create for loop and float to print corresponding candidate, vote percentage, and vote count
 for i in range(len(candidate)):
     print(f"{candidate[i]}: {percentages[i]}% ({counts[i]})")
+
+##Identify winner and assign variable
+winner_index = counts.index(max(counts))
+winner = candidate(winner_index)
 
 ##print results
 print("Election Results")
