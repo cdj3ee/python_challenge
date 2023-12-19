@@ -8,6 +8,7 @@ profits = []
 profit_change = []
 
 ##Open CSV and assign name, skip header row, assign columns
+## CHANGE TO RELATIVE PATH
 with open('C:\\Users\\cdj3e\\vu_bootcamp\\Python\\Module_3_Challenge\\python_challenge\\PyBank\\resources\\budget_data.csv', "r") as financial_analysis:
     reader = csv.reader(financial_analysis)
     next(reader)
@@ -34,5 +35,5 @@ print("---------------------------------")
 print("Total Months:", str(len(date)))
 print("Total: $", str(round(sum(profits))))
 print("Average Change: $", round(average_change, 2))
-print("Greatest Increase in Profits: ", max_date, "($", round(max_change), ")")
-print("Greatest Decrease in Profits: ", min_date, "($", round(min_change), ")")
+print("Greatest Increase in Profits: ", max_date, "($", round(max_change) +1, ")")
+print("Greatest Decrease in Profits: ", min_date, "($", round(min_change) +1, ")")
