@@ -35,5 +35,16 @@ print("---------------------------------")
 print("Total Months:", str(len(date)))
 print("Total: $", str(round(sum(profits))))
 print("Average Change: $", round(average_change, 2))
-print("Greatest Increase in Profits: ", max_date, "($", round(max_change) +1, ")")
-print("Greatest Decrease in Profits: ", min_date, "($", round(min_change) +1, ")")
+print("Greatest Increase in Profits: ", max_date, "($", round(max_change +1), ")")
+print("Greatest Decrease in Profits: ", min_date, "($", round(min_change +1), ")")
+
+## Write results to a csv file
+output_file = 'financial_analysis_results.csv'
+with open(output_file, 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(['Metric', 'Value'])
+    csvwriter.writerow(['Total Months', len(date)])
+    csvwriter.writerow(['Total', round(sum(profits))])
+    csvwriter.writerow(['Average Change', round(average_change, 2)])
+    csvwriter.writerow(['Greatest Increase in Profits', f"{max_date} (${round(max_change +1)})"])
+    csvwriter.writerow(['Greatest Decrease in Profits', f"{min_date} (${round(min_change +1)})"])
